@@ -21,7 +21,7 @@ import MyLoginForm from './admin/Login';
 import CheckoutPage from './OrderCheckout';
 import WhatsAppButton from './Components/WhatsAppButton';
 import { AuthProvider } from './context/AuthContext';
-import ProtectedRoute from './components/ProtectedRoute';
+import ProtectedRoute from './Components/ProtectedRoute';
 
 
 const LayoutWrapper = () => {

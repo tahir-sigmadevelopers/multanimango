@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import AdminLayout from '../components/AdminLayout';
+import AdminLayout from '../Components/AdminLayout';
 import { motion } from 'framer-motion';
 import { 
   Package, 
