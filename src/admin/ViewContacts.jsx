@@ -13,7 +13,7 @@ const ViewContacts = () => {
   const getAllContacts = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get('http://localhost:3000/api/contacts');
+      const { data } = await axios.get('https://multanimango-backend.vercel.app/api/contacts');
       if (data.success) {
         setContacts(data.contacts || []);
       }
@@ -29,7 +29,7 @@ const ViewContacts = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this contact?')) {
       try {
-        await axios.delete(`http://localhost:3000/api/contacts/${id}`);
+        await axios.delete(`https://multanimango-backend.vercel.app/api/contacts/${id}`);
         toast.success('Contact deleted successfully');
         getAllContacts(); // Refresh after delete
       } catch (error) {

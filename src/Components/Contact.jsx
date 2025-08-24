@@ -45,7 +45,7 @@ const Contact = () => {
     
     setLoading(true);
     try {
-      const { data } = await axios.post("http://localhost:3000/api/save/contact", {
+      const { data } = await axios.post("https://multanimango-backend.vercel.app/api/save/contact", {
         name, email, whatsappNo, message
       });
       

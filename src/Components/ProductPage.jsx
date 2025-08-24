@@ -25,7 +25,7 @@ const ProductPage = () => {
   const fetchAllMangoes = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get("http://localhost:3000/api/mango/get");
+      const { data } = await axios.get("https://multanimango-backend.vercel.app/api/mango/get");
       setMangoes(data?.allData || []);
       setFilteredMangoes(data?.allData || []);
       toast.success("Products loaded successfully! 🥭");

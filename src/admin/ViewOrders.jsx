@@ -27,7 +27,7 @@ const ViewOrders = () => {
   const getAllOrders = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get('http://localhost:3000/api/orders');
+      const { data } = await axios.get('https://multanimango-backend.vercel.app/api/orders');
       if (data.success) {
         setOrders(data.orders || []);
       }
@@ -42,7 +42,7 @@ const ViewOrders = () => {
   // Update order status
   const handleStatusUpdate = async (orderId, newStatus) => {
     try {
-      const { data } = await axios.put(`http://localhost:3000/api/orders/${orderId}/status`, {
+      const { data } = await axios.put(`https://multanimango-backend.vercel.app/api/orders/${orderId}/status`, {
         orderStatus: newStatus
       });
       
@@ -59,7 +59,7 @@ const ViewOrders = () => {
   // Update payment status
   const handlePaymentStatusUpdate = async (orderId, newPaymentStatus) => {
     try {
-      const { data } = await axios.put(`http://localhost:3000/api/orders/${orderId}/status`, {
+      const { data } = await axios.put(`https://multanimango-backend.vercel.app/api/orders/${orderId}/status`, {
         paymentStatus: newPaymentStatus
       });
       
@@ -77,7 +77,7 @@ const ViewOrders = () => {
   const handleDelete = async (orderId) => {
     if (window.confirm('Are you sure you want to delete this order?')) {
       try {
-        const { data } = await axios.delete(`http://localhost:3000/api/orders/${orderId}`);
+        const { data } = await axios.delete(`https://multanimango-backend.vercel.app/api/orders/${orderId}`);
         if (data.success) {
           toast.success('Order deleted successfully');
           getAllOrders(); // Refresh orders

@@ -24,7 +24,7 @@ const HomePage = () => {
 
   const HomePageMangoes = async () => {
     try {
-      const { data } = await axios.get("http://localhost:3000/api/mango/get");
+      const { data } = await axios.get("https://multanimango-backend.vercel.app/api/mango/get");
       setMangoes(data?.allData);
     } catch (error) {
       console.error("Error fetching products:", error);

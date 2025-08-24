@@ -86,7 +86,7 @@ export default function CheckoutPage() {
       };
 
       // Send order to backend
-      const response = await fetch('http://localhost:3000/api/orders/create', {
+      const response = await fetch('https://multanimango-backend.vercel.app/api/orders/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

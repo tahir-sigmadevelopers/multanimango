@@ -9,7 +9,7 @@ const ViewMangoes = () => {
   // Fetch all mango data
   const getAllMangoes = async () => {
     try {
-      const { data } = await axios.get('http://localhost:3000/api/mango/get');
+      const { data } = await axios.get('https://multanimango-backend.vercel.app/api/mango/get');
       setMangoes(data?.allData || []); // Make sure this matches your backend response
     } catch (error) {
       toast.error('Failed to fetch mangoes');
@@ -21,7 +21,7 @@ const ViewMangoes = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this mango?')) {
       try {
-        const { data } = await axios.delete(`http://localhost:3000/api/delete/${id}`);
+        const { data } = await axios.delete(`https://multanimango-backend.vercel.app/api/delete/${id}`);
         if (data.success) {
           toast.success('Mango deleted successfully! 🗑️');
           getAllMangoes(); // Refresh after delete

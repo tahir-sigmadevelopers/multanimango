@@ -26,7 +26,7 @@ const ProductDetail = () => {
 
   const getOneMangoDetail = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:3000/api/single/${id}`);
+      const { data } = await axios.get(`https://multanimango-backend.vercel.app/api/single/${id}`);
       setProduct(data?.singleMango);
       toast.success("Product loaded successfully! 🥭");
     } catch (error) {

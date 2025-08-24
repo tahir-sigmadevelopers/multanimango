@@ -64,7 +64,7 @@ const AddMango = () => {
         price,
       };
 
-      const { data } = await axios.post("http://localhost:3000/api/mango/save", newMango);
+      const { data } = await axios.post("https://multanimango-backend.vercel.app/api/mango/save", newMango);
       
       if (data.success) {
         toast.success("Mango added successfully! 🥭");

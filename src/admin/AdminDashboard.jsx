@@ -36,10 +36,10 @@ const AdminDashboard = () => {
     try {
       setLoading(true);
       const [mangoStats, contactStats, orderStats, ordersData] = await Promise.all([
-        axios.get('http://localhost:3000/api/mango/stats'),
-        axios.get('http://localhost:3000/api/contacts/stats'),
-        axios.get('http://localhost:3000/api/orders/stats'),
-        axios.get('http://localhost:3000/api/orders')
+              axios.get('https://multanimango-backend.vercel.app/api/mango/stats'),
+      axios.get('https://multanimango-backend.vercel.app/api/contacts/stats'),
+      axios.get('https://multanimango-backend.vercel.app/api/orders/stats'),
+      axios.get('https://multanimango-backend.vercel.app/api/orders')
       ]);
       
       setStats({
@@ -72,7 +72,7 @@ const AdminDashboard = () => {
   // Update order status
   const handleStatusUpdate = async (orderId, newStatus) => {
     try {
-      const { data } = await axios.put(`http://localhost:3000/api/orders/${orderId}/status`, {
+      const { data } = await axios.put(`https://multanimango-backend.vercel.app/api/orders/${orderId}/status`, {
         orderStatus: newStatus
       });
       
